@@ -1,0 +1,76 @@
+{{ define "main" }}
+ <script type="text/javascript">
+  $(document).ready(function() {
+      $('#Projects').DataTable( {
+          "order": [[ 0, "asc" ]],
+          responsive: true
+      } );
+  } );
+</script>
+<style type="text/css">
+.btn-outline-secondary{
+  position: inherit;
+  width: 100%;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: #6c757d !important;
+}
+.btn-outline-secondary:hover{
+ background-color: #6c757d !important;
+ color: rgba(255, 255, 255, 1) !important;
+}
+</style>
+<div class="callout callout-dogecoin">
+<h5>{{ .Title }}</h5>
+</div>
+<section class="content">
+<div class="content-fluid">
+
+
+  <!-- Tab content -->
+  <div style="max-width: 1200px; margin: auto;background-color: #FFFFFF !important; padding: 15px; border-radius: 20px">
+  <table id="Projects" cellspacing="1" width="100%" style="border-color: #EEEEEE; text-align: left !important" class="table table-striped display responsive dataTable no-footer dtr-inline">
+<thead>
+  <tr bgcolor="#EEEEEE" style="font-weight: bold">
+    <th><i class="fa-solid fa-paw"></i> Project</th>
+<th><i class="fa-solid fa-code"></i> Description</th>
+    <th><i class="fa-solid fa-users"></i> Social</th>
+  </tr>
+</thead>
+
+{{ $paginator := .Paginate .Data.Pages }}
+         {{ range $paginator.Pages.GroupByDate "2006" }}
+                    {{ range .Pages }}
+  <tr>
+    <td>
+      <div class="row" style="padding-left: 10px"><img src="{{.Params.social_Image}}" style="max-width: 60px;border-radius: 50%;">{{.Title}}</div>
+    </td>
+    <td>
+        {{.Params.description}}
+    </td>
+    <td>
+      {{ if ne .Params.social_URL "" }}
+      <a href="{{ .Params.social_URL }}" target="_blank" class="btn btn-outline-secondary">
+        {{ if eq .Params.social_Type "twitter" }}<i class="fa-brands fa-twitter"></i> {{.Title}}{{ end }}
+        {{ if eq .Params.social_Type "github" }}<i class="fa-brands fa-github"></i> {{.Title}}{{ end }}
+        {{ if eq .Params.social_Type "reddit" }}<i class="fa-brands fa-reddit"></i> {{.Title}}{{ end }}
+        {{ if eq .Params.social_Type "outher" }}<i class="fa-solid fa-globe"></i> {{.Title}}{{ end }}
+      </a>
+      {{ end }}
+    </td>
+  </tr>
+
+                    {{ end }}
+
+</table>
+</div>
+</div>
+  		</section>
+ {{ end }}
+
+
+
+
+
+
+{{ end }}

@@ -22,10 +22,16 @@ theme = "dogecoin.org"
     php = "PHP"
     emulator = "Emulator"
     ##side menu
+    getting_started = "Getting Started"
+    introduction = "Introduction"
+    install = "Install"
+    contents = "Contents"
+    how_to = "How To"
     examples = "Examples"
     blockchain = "BlockChain"
     projects_list = "Projects List"
     dogecoin_devs = "Dogecoin Devs"
+    ##folders
     much_start_coding = "much-start-coding"
     such_dogecoin_projects = "such-dogecoin-projects"
     so_dogecoin_blog = "so-dogecoin-blog"
@@ -43,15 +49,13 @@ theme = "dogecoin.org"
         weight = 2
     [[languages.en.menu.main]]
         name = "Projects"
-        namea = "Getting Started"
         pre = "paw"
         url = "/such-dogecoin-projects/"
         weight = 3
     [[languages.en.menu.main]]
         name = "Blog"
-        namea = "Getting Started"
         pre = "tag"
-        url = "/so-dogecoin-blog/"
+        url = "/blog/"
         weight = 4
 
 ## End English Language here
@@ -80,7 +84,6 @@ theme = "dogecoin.org"
 [languages.pt.menu]
     [[languages.pt.menu.main]]
         name = "Wow"
-        namea = "Getting Started"
         pre = "house"
         url = "/"
         weight = 1
@@ -91,13 +94,11 @@ theme = "dogecoin.org"
         weight = 2
     [[languages.pt.menu.main]]
         name = "Projects"
-        namea = "Getting Started"
         pre = "paw"
         url = "/such-dogecoin-projects/"
         weight = 3
     [[languages.pt.menu.main]]
         name = "Blog"
-        namea = "Getting Started"
         pre = "tag"
         url = "/so-dogecoin-blog/"
         weight = 4

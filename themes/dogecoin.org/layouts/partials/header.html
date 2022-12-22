@@ -116,9 +116,9 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <li class="nav-item has-treeview menu-open">
                         <a href="#" class="nav-link active">
-                            <i class="fa-solid fa-book-open"></i>
+                            <i class="nav-icon fa-solid fa-book-open"></i>
                             <p>
-                                Getting Started
+                                {{ .Site.Params.getting_started }}
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -126,7 +126,7 @@
                             {{ range (where (where $.Site.Pages ".Params.type" "gettingstarted" ) ".Params.subtype" "introduction")  }}
                             <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="fa-brands fa-readme"></i>
+                            <i class="nav-icon fa-brands fa-readme"></i>
                             <p>
                             {{ .Params.title }}
                             <i class="fas fa-angle-left right"></i>
@@ -135,21 +135,21 @@
                             </a>
                             <ul class="nav nav-treeview">
                             <li class="nav-item">
-                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/introduction" class="nav-link">
-                            <i class="fa-solid fa-circle-info"></i>
-                            <p>Introduction</p>
+                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/{{ lower .Site.Params.introduction }}" class="nav-link">
+                            <i class="nav-icon fa-solid fa-circle-info"></i>
+                            <p>{{ .Site.Params.introduction }}</p>
                             </a>
                             </li>
                             <li class="nav-item">
-                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/install" class="nav-link">
-                            <i class="fa-solid fa-gears"></i>
-                            <p>Install</p>
+                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/{{ lower .Site.Params.install }}" class="nav-link">
+                            <i class="nav-icon fa-solid fa-gears"></i>
+                            <p>{{ .Site.Params.install }}</p>
                             </a>
                             </li>
                             <li class="nav-item">
-                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/contents" class="nav-link">
-                            <i class="fa-solid fa-cube"></i>
-                            <p>Contents</p>
+                            <a href="/{{ lower .Site.Params.much_start_coding }}/{{ lower .Params.title }}/{{ lower .Site.Params.contents }}" class="nav-link">
+                            <i class="nav-icon fa-solid fa-code"></i>
+                            <p>{{ .Site.Params.contents }}</p>
                             </a>
                             </li>
                             </ul>
@@ -159,11 +159,11 @@
                     </li>
 
 
-                    <li class="nav-item">
+                    <li class="nav-item" style="display: none">
                         <a href="#" class="nav-link">
-                            <i class="fa-solid fa-code"></i>
+                            <i class="nav-icon fa-solid fa-code"></i>
                             <p>
-                                How To
+                                {{ .Site.Params.how_to }}
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
@@ -176,7 +176,7 @@
 
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fa-solid fa-list"></i>
+                            <i class="nav-icon fa-solid fa-list"></i>
                             <p>
                                 {{ .Site.Params.projects_list }}
                                 <span class="right badge text-bg-warning">{{ len (where (where $.Site.Pages ".Params.type" "gettingstarted" ) ".Params.subtype" "introduction") }}</span>
@@ -185,7 +185,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-solid fa-paw"></i>
+                            <i class="nav-icon fas fa-solid fa-paw"></i>
                             <p>
                                 {{ .Site.Params.dogecoin_devs }}
                                 <span class="right badge text-bg-light">0</span>
