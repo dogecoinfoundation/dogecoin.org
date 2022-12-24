@@ -15,12 +15,16 @@ theme = "dogecoin.org"
     contentDir = "content/en"
 
 [languages.en.params]
+
     ## index
+    learn_run_deploy = "Learn, Run, Deploy on "
+    blockchain = "Blockchain"
     javascript = "Javascript"
     go = "Go"
     python = "Python"
     php = "PHP"
     emulator = "Emulator"
+
     ##side menu
     getting_started = "Getting Started"
     introduction = "Introduction"
@@ -28,13 +32,19 @@ theme = "dogecoin.org"
     contents = "Contents"
     how_to = "How To"
     examples = "Examples"
-    blockchain = "BlockChain"
+    #blockchain = "BlockChain"
     projects_list = "Projects List"
     dogecoin_devs = "Dogecoin Devs"
+
     ##folders
     much_start_coding = "much-start-coding"
     such_dogecoin_projects = "such-dogecoin-projects"
     so_dogecoin_blog = "so-dogecoin-blog"
+
+    ##projects
+    project = "Project"
+    description = "Description"
+    social = "Social"
 
 [languages.en.menu]
     [[languages.en.menu.main]]
